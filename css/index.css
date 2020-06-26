@@ -4,6 +4,7 @@ body {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  background-color: black;
   color: white;
   font-family: "Oxanium", cursive; }
 
@@ -36,96 +37,156 @@ header {
 #bg {
   position: absolute; }
 
-main {
+#main {
   height: 100%; }
-  main .content {
+  #main .content {
     height: 100%;
     position: relative;
     overflow: scroll; }
-    main .content .home {
+    #main .content .home {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center; }
-      main .content .home #title-wrap h1 {
-        font-size: 8vmin;
+      #main .content .home #title-wrap h1 {
+        font-size: 7vmin;
         font-weight: 300;
         background-color: black;
-        padding: 4px 36px 2px; }
-    main .content .overlay {
+        padding: 10px 18px; }
+    #main .content .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       height: 100%;
-      overflow: scroll; }
-      main .content .overlay .overlay-content {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none; }
+      #main .content .overlay::-webkit-scrollbar {
+        display: none; }
+      #main .content .overlay .overlay-content {
         min-width: 300px; }
         @media only screen and (max-width: 768px) {
-          main .content .overlay .overlay-content {
+          #main .content .overlay .overlay-content {
             margin: 120px 30px 100px; } }
         @media only screen and (min-width: 768px) {
-          main .content .overlay .overlay-content {
+          #main .content .overlay .overlay-content {
             margin: 0 auto;
             margin-top: 150px;
             margin-bottom: 100px;
             width: 80%;
             max-width: 1000px; } }
-        main .content .overlay .overlay-content #who #bio h2 {
+        #main .content .overlay .overlay-content #who #bio h2 {
           font-size: 2rem;
           font-weight: 600; }
-        main .content .overlay .overlay-content #who #bio p {
+        #main .content .overlay .overlay-content #who #bio p {
           margin-top: 25px;
           font-weight: 300;
           line-height: 1.8rem; }
-        main .content .overlay .overlay-content #who #github {
+        #main .content .overlay .overlay-content #who #github {
           margin-top: 20px; }
-          main .content .overlay .overlay-content #who #github a img {
+          #main .content .overlay .overlay-content #who #github a img {
             width: 28px; }
-          main .content .overlay .overlay-content #who #github a span {
+          #main .content .overlay .overlay-content #who #github a span {
             margin-left: 8px; }
-        main .content .overlay .overlay-content #who #experience {
+        #main .content .overlay .overlay-content #who #experience {
           margin-top: 100px; }
-          main .content .overlay .overlay-content #who #experience h3 {
+          #main .content .overlay .overlay-content #who #experience h3 {
             font-weight: 600;
             font-size: 1.2rem; }
-          main .content .overlay .overlay-content #who #experience .line {
+          #main .content .overlay .overlay-content #who #experience .line {
             border: rgba(255, 255, 255, 0.5) solid;
             border-width: 0px 0px 1px 0px; }
-          main .content .overlay .overlay-content #who #experience .table {
+          #main .content .overlay .overlay-content #who #experience .table {
             display: grid;
             margin-top: 30px; }
-            main .content .overlay .overlay-content #who #experience .table .row {
+            #main .content .overlay .overlay-content #who #experience .table .row {
               display: grid;
               margin: 20px 0;
               font-weight: 400;
               row-gap: 8px; }
               @media only screen and (min-width: 768px) {
-                main .content .overlay .overlay-content #who #experience .table .row {
+                #main .content .overlay .overlay-content #who #experience .table .row {
                   grid-template-columns: 140px 180px 1fr; } }
-              main .content .overlay .overlay-content #who #experience .table .row .as {
+              #main .content .overlay .overlay-content #who #experience .table .row .as {
                 font-weight: 200;
                 font-size: 0.9rem; }
                 @media only screen and (min-width: 768px) {
-                  main .content .overlay .overlay-content #who #experience .table .row .as {
+                  #main .content .overlay .overlay-content #who #experience .table .row .as {
                     text-align: right; } }
-        main .content .overlay .overlay-content #contact h1 {
+        #main .content .overlay .overlay-content #contact h1 {
           font-size: 1.6rem; }
-        main .content .overlay .overlay-content #contact p {
+        #main .content .overlay .overlay-content #contact p {
           margin-top: 30px;
           font-weight: 200; }
-  main footer {
+  #main footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: right; }
     @media only screen and (max-width: 768px) {
-      main footer {
+      #main footer {
         margin: 0px 15px 15px; } }
     @media only screen and (min-width: 768px) {
-      main footer {
+      #main footer {
         margin: 0px 50px 30px; } }
     @media only screen and (max-width: 768px) {
-      main footer p {
+      #main footer p {
         font-size: 0.8em; } }
     @media only screen and (min-width: 768px) {
-      main footer p {
+      #main footer p {
         font-size: 1em; } }
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #loading .cssload-container {
+    width: 100%;
+    height: 49px;
+    text-align: center; }
+    #loading .cssload-container .cssload-zenith {
+      width: 49px;
+      height: 49px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      box-shadow: 3px 3px 1px;
+      animation: cssload-spin 690ms infinite linear;
+      -o-animation: cssload-spin 690ms infinite linear;
+      -ms-animation: cssload-spin 690ms infinite linear;
+      -webkit-animation: cssload-spin 690ms infinite linear;
+      -moz-animation: cssload-spin 690ms infinite linear; }
+
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-o-keyframes cssload-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-ms-keyframes cssload-spin {
+  #loading .cssload-container 100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes cssload-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-moz-keyframes cssload-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg); } }
