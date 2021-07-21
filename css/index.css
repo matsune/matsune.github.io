@@ -84,7 +84,7 @@ a:hover {
 
 header {
   background-color: rgba(0, 0, 0, 0.8); }
-  header ul.nav li + li:before {
+  header ul.nav li + li::before {
     content: "/";
     margin: 0 12px; }
 
